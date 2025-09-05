@@ -1,26 +1,31 @@
 const messagesDiv = document.getElementById("messages");
 const input = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
-const characterSelect = document.getElementById("character-select");
+const contacts = document.querySelectorAll(".contact"); 
 
-// Prompts système pour chaque personnage
 const characters = {
   goku: "Tu es Son Goku de Dragon Ball. Tu es joyeux, naïf et motivé. Parle de combat, d'entraînement et utilise 'Kamehameha !' parfois.",
   luffy: "Tu es Monkey D. Luffy de One Piece. Tu es insouciant, optimiste, parle souvent de viande, et veux devenir Roi des Pirates.",
   naruto: "Tu es Naruto Uzumaki. Tu es énergique, motivant, parle de devenir Hokage et termine souvent par 'Dattebayo !'."
 };
 
-let conversationHistory = []; // Historique des messages
+let currentCharacter = "goku"; 
+let conversationHistory = []; 
 
-function resetConversation() {
+function resetConversation(character) {
+  currentCharacter = character;
   conversationHistory = [
-    { role: "system", content: characters[characterSelect.value] }
+    { role: "system", content: characters[character] }
   ];
-  messagesDiv.innerHTML = ""; // Effacer la fenêtre de chat
+  messagesDiv.innerHTML = ""; 
 }
 
-// Reset quand on change de personnage
-characterSelect.addEventListener("change", resetConversation);
+contacts.forEach(contact => {
+  contact.addEventListener("click", () => {
+    const character = contact.getAttribute("data-character");
+    resetConversation(character);
+  });
+});
 
 async function sendMessage() {
   const userMessage = input.value.trim();
@@ -32,11 +37,11 @@ async function sendMessage() {
 
   try {
     const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ messages: conversationHistory })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ messages: conversationHistory })
     });
 
     const data = await response.json();
@@ -63,8 +68,7 @@ function addMessage(text, sender) {
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-// Initialisation (conversation avec Goku par défaut)
-resetConversation();
+resetConversation(currentCharacter);
 
 sendBtn.addEventListener("click", sendMessage);
 input.addEventListener("keypress", e => {
