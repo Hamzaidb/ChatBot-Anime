@@ -3,25 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot IA - Personnages d'animés</title>
+  <title>Chatbot IA - Messagerie</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="chat-container">
-    <select id="character-select">
-      <option value="goku">Son Goku</option>
-      <option value="luffy">Monkey D. Luffy</option>
-      <option value="naruto">Naruto Uzumaki</option>
-    </select>
-    <div id="messages"></div>
-    <div id="input-area">
-      <input type="text" id="user-input" placeholder="Écris un message..." />
-      <button id="send-btn">Envoyer</button>
+  <div id="app-container">
+    
+    <div id="contacts-column">
+      <div class="contact" data-character="goku">
+        <img src="goku.jpg" alt="Goku" class="profile-pic">
+        <span class="contact-name">Son Goku</span>
+      </div>
+      <div class="contact" data-character="luffy">
+        <img src="luffy.jpg" alt="Luffy" class="profile-pic">
+        <span class="contact-name">Monkey D. Luffy</span>
+      </div>
+      <div class="contact" data-character="naruto">
+        <img src="naruto.jpg" alt="Naruto" class="profile-pic">
+        <span class="contact-name">Naruto Uzumaki</span>
+      </div>
+    </div>
+
+   
+    <div id="chat-column">
+      <div id="messages"></div>
+      <div id="input-area">
+        <input type="text" id="user-input" placeholder="Écris un message..." />
+        <button id="send-btn">Envoyer</button>
+      </div>
     </div>
   </div>
-
-
 </body>
 </html>
