@@ -2,7 +2,9 @@
   "version": 2,
   "builds": [
     { "src": "server.mjs", "use": "@vercel/node" },
-    { "src": "ia-anime-chatbot.html", "use": "@vercel/static" }
+    { "src": "ia-anime-chatbot.html", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" },
+    { "src": "style.css", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "server.mjs" },
