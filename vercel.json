@@ -2,16 +2,10 @@
   "version": 2,
   "builds": [
     { "src": "server.mjs", "use": "@vercel/node" },
-    { "src": "ia-anime-chatbot.html", "use": "@vercel/static" },
-    { "src": "style.css", "use": "@vercel/static" },
-    { "src": "script.js", "use": "@vercel/static" },
-    { "src": "favicon.png", "use": "@vercel/static" }
+    { "src": "public/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "server.mjs" },
-    { "src": "/style.css", "dest": "/style.css" },
-    { "src": "/script.js", "dest": "/script.js" },
-    { "src": "/favicon.png", "dest": "/favicon.png" },
     { "src": "/(.*)", "dest": "/ia-anime-chatbot.html" }
   ]
 }
