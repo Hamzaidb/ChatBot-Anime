@@ -24,30 +24,27 @@ Installation et configuration
 -----------------------------
 
 1.  **Cloner le projet**
-    
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`git clone   cd` 
+`git clone   cd` 
 
 1.  **Installer les dépendances**
     
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   npm install   `
+  npm install   `
 
 1.  **Configurer le fichier .env**
     
 
 Créez un fichier .env à la racine du projet et ajoutez votre clé API OpenAI :
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   OPENAI_API_KEY=VOTRE_CLE_API   `
+ OPENAI_API_KEY=VOTRE_CLE_API   `
 
 ⚠️ Assurez-vous que la clé est valide pour pouvoir lancer le projet en local.
 
 1.  **Lancer le serveur**
-    
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   node server.mjs   `
+ node server.mjs   `
 
-Le projet devrait être accessible sur http://localhost:3000.
+Le projet devrait être accessible via le fichier HTML
 
 Déploiement
 -----------
@@ -64,7 +61,14 @@ Le projet peut être déployé sur **Vercel** ou tout autre service supportant N
 Structure du projet
 -------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   /  ├─ ia-anime-chatbot.html   # Page principale  ├─ style.css               # Styles  ├─ script.js               # Logique du front-end  ├─ server.mjs              # Serveur Node.js pour l'API  ├─ favicon.png  ├─ assets/                 # Images et backgrounds des personnages  ├─ .env                    # Variables d’environnement (local uniquement)   `
+ / 
+ ├─ ia-anime-chatbot.html   # Page principale  
+ ├─ style.css               # Styles  
+ ├─ script.js               # Logique du front-end  
+ ├─ server.mjs              # Serveur Node.js pour l'API  
+ ├─ favicon.png  
+ ├─ assets/                 # Images et backgrounds des personnages  
+ ├─ .env                    # Variables d’environnement (local uniquement)   `
 
 Technologies utilisées
 ----------------------
