@@ -6,6 +6,8 @@ Présentation du projet
 
 Ce projet est un **chatbot sur le thème des animés**.Vous pouvez choisir de discuter avec différents personnages, chacun ayant sa **propre personnalité** inspirée de son univers. L’objectif est de rendre les interactions plus immersives et divertissantes.
 
+Lien du projet déployé : https://chat-bot-anime.vercel.app/
+
 Fonctionnalités
 ---------------
 
